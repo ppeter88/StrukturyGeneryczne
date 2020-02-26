@@ -20,16 +20,17 @@ namespace _1_TypyGeneryczne
             kolejka.Zapisz(6);
             kolejka.Zapisz(7);
             kolejka.Zapisz(8);
-            kolejka.Zapisz(9);
-            kolejka.Zapisz(10);
-            kolejka.Zapisz(11);
-            kolejka.Zapisz(12);
-            kolejka.Zapisz(13);
-            kolejka.Zapisz(14);
 
             foreach (var item in kolejka.bufor)
             {
                 Console.WriteLine(item);
+            }
+
+            Console.WriteLine("W naszej kolejce jest: ");
+
+            while (!kolejka.JestPusty)
+            {
+                Console.WriteLine("\t\t" + kolejka.Czytaj());
             }
 
         }
