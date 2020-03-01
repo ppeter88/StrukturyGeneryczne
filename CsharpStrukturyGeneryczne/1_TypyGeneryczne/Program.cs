@@ -12,18 +12,16 @@ namespace _1_TypyGeneryczne
         {
             KolejkaKolowa kolejka = new KolejkaKolowa(5);
 
-            kolejka.Zapisz(1);
-            kolejka.Zapisz(2);
-            kolejka.Zapisz(3);
-            kolejka.Zapisz(4);
-            kolejka.Zapisz(5);
-            kolejka.Zapisz(6);
-            kolejka.Zapisz(7);
-            kolejka.Zapisz(8);
-
-            foreach (var item in kolejka.bufor)
+            while (true)
             {
-                Console.WriteLine(item);
+                var wartosc = 0.0;
+                var wartoscwejsciowa = Console.ReadLine();
+                if (double.TryParse(wartoscwejsciowa, out wartosc))
+                {
+                    kolejka.Zapisz(wartosc);
+                    continue;
+                }
+                break;
             }
 
             Console.WriteLine("W naszej kolejce jest: ");
