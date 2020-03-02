@@ -45,7 +45,7 @@ namespace _1_TypyGeneryczneTest
         public void NadpisujeGdyJestWiekszaNizPojemnos()
         {
             var kolejka = new KolejkaKolowa(pojemnosc: 3);
-            var wartosci = new[] { 1.3, 12.3, 3.2, 5.21, 12.4 };
+            var wartosci = new[] { 1.3, 12.3, 3.2, 5.21, 12.4, 33.2 };
 
             foreach (var wartosc in wartosci)
             { 
