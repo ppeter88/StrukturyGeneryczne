@@ -10,7 +10,7 @@ namespace _2_KolekcjeGeneryczne
     {
         static void Main(string[] args)
         {
-            Pracownik[] pracownicy = new Pracownik[]
+            var pracownicy = new Pracownik[]
             {
                 /*Inicjalizator tablicy - tablica będzie przechowywać tyle elelemntów, jakie zdefiniujemy w klamrach*/
                 new Pracownik {Imie = "Marcin", Nazwisko = "Nowak"},
@@ -21,6 +21,11 @@ namespace _2_KolekcjeGeneryczne
             foreach (var pracownik in pracownicy)
             {
                 Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
+            }
+
+            for (int i = 0; i < pracownicy.Length; i++)
+            {
+                Console.WriteLine(pracownicy[i].Imie + " " + pracownicy[i].Nazwisko);
             }
 
             /*Poniżej, możliwość zmiany wielkości tablicy*/
