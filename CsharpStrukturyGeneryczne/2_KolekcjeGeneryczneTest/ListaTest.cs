@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace _2_KolekcjeGeneryczneTest
@@ -37,7 +38,7 @@ namespace _2_KolekcjeGeneryczneTest
             /*Usuwanie określonej wartości z pozycji listy (wartość)*/
             listaLiczb.Remove(2);
 
-            //Assert.IsTrue(listaLiczb.SequenceEqual(new[] { 1, 3 }));
+            Assert.IsTrue(listaLiczb.SequenceEqual(new[] { 1, 3 }));
 
         }
 
@@ -49,7 +50,7 @@ namespace _2_KolekcjeGeneryczneTest
             /*Usuwanie wartości z określonej pozycji listy (indeks)*/
             listaLiczb.RemoveAt(2);
 
-            //Assert.IsTrue(listaLiczb.SequenceEqual(new[] { 1, 2 }));
+            Assert.IsTrue(listaLiczb.SequenceEqual(new[] { 1, 2 }));
 
         }
 
