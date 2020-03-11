@@ -16,7 +16,65 @@ namespace _2_KolekcjeGeneryczne
             //Stos();
             //HashSet();
             //LinkedList();
+            //LinkedList2();
+            //Dictionary();
+            //Dictionary2();
 
+            
+
+            return;
+        }
+
+        private static void Dictionary2()
+        {
+            /*Słownik, do którego do jednego klucza, przypisanych jest kilka wartości - poprzez podanie typu Lista do wartości*/
+            var pracownicy = new Dictionary<string, List<Pracownik>>();
+            pracownicy.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Imie = "Wojciech", Nazwisko = "Nowak" } });
+
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Imie = "Jan", Nazwisko = "Kowalski" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Imie = "Mariusz", Nazwisko = "Jurczyszyn" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Imie = "Paweł", Nazwisko = "Domagała" });
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Imie = "Zenek", Nazwisko = "Martyniuk" });
+
+            pracownicy.Add("Informatyka", new List<Pracownik>() { new Pracownik { Imie = "Marcelina", Nazwisko = "Zawadzka" },
+                                                                  new Pracownik { Imie = "Janina", Nazwisko = "Szymańska"   } });
+
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("\nDział: " + item.Key + "\n");
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine("{0} {1}", pracownik.Imie, pracownik.Nazwisko);
+                }
+            }
+
+            Console.WriteLine("\nPracownicy z księgowości:");
+
+            foreach (var item in pracownicy["Ksiegowosc"])
+            {
+                Console.WriteLine(item.Imie + " " + item.Nazwisko);
+            }
+        }
+
+        private static void Dictionary()
+        {
+            var pracownicy = new Dictionary<string, Pracownik>();
+            pracownicy.Add("Nowak", new Pracownik { Nazwisko = "Nowak" });
+            pracownicy.Add("Kowal", new Pracownik { Nazwisko = "Kowal" });
+            pracownicy.Add("Kaczor", new Pracownik { Nazwisko = "Kaczor" });
+            pracownicy.Add("Nowak", new Pracownik { Nazwisko = "Nowak" });
+
+            var kowal = pracownicy["Kowal"];
+
+            foreach (var pracownik in pracownicy)
+            {
+                Console.WriteLine("{0}:{1}", pracownik.Key, pracownik.Value.Nazwisko);
+            }
+        }
+
+        private static void LinkedList2()
+        {
             LinkedList<int> lista = new LinkedList<int>();
             lista.AddFirst(5);
             lista.AddFirst(6);
@@ -35,8 +93,6 @@ namespace _2_KolekcjeGeneryczne
                 Console.WriteLine(wezel.Value);
                 wezel = wezel.Next;
             }
-
-            return;
         }
 
         private static void LinkedList()
