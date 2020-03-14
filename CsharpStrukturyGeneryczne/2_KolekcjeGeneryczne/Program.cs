@@ -19,10 +19,78 @@ namespace _2_KolekcjeGeneryczne
             //LinkedList2();
             //Dictionary();
             //Dictionary2();
-
-            
+            //SortedDictionary();
+            //SortedList();
+            //SortedSet();
 
             return;
+        }
+
+        private static void SortedSet()
+        {
+            var set = new SortedSet<int>();
+
+            set.Add(4);
+            set.Add(1);
+            set.Add(2);
+            set.Add(6);
+            set.Add(4);
+            set.Add(2);
+            set.Add(1);
+
+            foreach (var item in set)
+            {
+                Console.WriteLine(item);
+            }
+
+            var set2 = new SortedSet<string>();
+
+            set2.Add("osiem");
+            set2.Add("jeden");
+            set2.Add("pięć");
+            set2.Add("trzy");
+            set2.Add("dwa");
+            set2.Add("pięć");
+            set2.Add("osiem");
+
+            foreach (var item in set2)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void SortedList()
+        {
+            var listaPosortowana = new SortedList<int, string>();
+
+            listaPosortowana.Add(6, "sześć");
+            listaPosortowana.Add(3, "trzy");
+            listaPosortowana.Add(1, "jeden");
+            listaPosortowana.Add(4, "cztery");
+
+            foreach (var item in listaPosortowana)
+            {
+                Console.WriteLine(item.Value);
+            }
+        }
+
+        private static void SortedDictionary()
+        {
+            var pracownicy = new SortedDictionary<string, List<Pracownik>>();
+
+            pracownicy.Add("Sprzedaż", new List<Pracownik> { new Pracownik { Imie = "Marian", Nazwisko = "Grzegorczyk" },
+                                                             new Pracownik { Imie = "Izabela", Nazwisko = "Kubicka" },
+                                                             new Pracownik { Imie = "Marek", Nazwisko = "Domaradzki" } });
+            pracownicy.Add("Zakupy", new List<Pracownik>   { new Pracownik { Imie = "Łukasz", Nazwisko = "Koza" },
+                                                             new Pracownik { Imie = "Piotr", Nazwisko = "Ogórek" } });
+            pracownicy.Add("Magazyn", new List<Pracownik>  { new Pracownik { Imie = "Paweł", Nazwisko = "Łęcka" },
+                                                             new Pracownik { Imie = "Łukasz", Nazwisko = "Górski" },
+                                                             new Pracownik { Imie = "Michał", Nazwisko = "Cebula" },
+                                                             new Pracownik { Imie = "Basia", Nazwisko = "Olejniczak" } });
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("Ilość pracowników w dziale {0} wynosi: {1}", item.Key, item.Value.Count);
+            }
         }
 
         private static void Dictionary2()
