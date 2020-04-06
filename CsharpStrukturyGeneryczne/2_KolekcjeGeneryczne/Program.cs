@@ -23,20 +23,20 @@ namespace _2_KolekcjeGeneryczne
             //SortedList();
             //SortedSet();
 
-            var pracownicy = new SortedDictionary<string, SortedSet<Pracownik>>();
+            var pracownicy = new DzialyKolekcja();
 
-            pracownicy.Add("Sprzedaż", new SortedSet<Pracownik>(new PracownikComparer()));
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Jończak" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Pikuła" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Ożóg" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Ożóg" });
+            pracownicy.Dodaj("Sprzedaż", new Pracownik { Nazwisko = "Jończak" })
+                      .Dodaj("Sprzedaż", new Pracownik { Nazwisko = "Jończak" })
+                      .Dodaj("Sprzedaż", new Pracownik { Nazwisko = "Pikuła" })
+                      .Dodaj("Sprzedaż", new Pracownik { Nazwisko = "Ożóg" })
+                      .Dodaj("Sprzedaż", new Pracownik { Nazwisko = "Ożóg" });
 
-            pracownicy.Add("Księgowość", new SortedSet<Pracownik>(new PracownikComparer()));
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Kowalski" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Mordawski" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Burak" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Burak" });
+            pracownicy.Dodaj("Księgowość", new Pracownik { Nazwisko = "Nowak" })
+                      .Dodaj("Księgowość", new Pracownik { Nazwisko = "Nowak" })
+                      .Dodaj("Księgowość", new Pracownik { Nazwisko = "Kowalski" })
+                      .Dodaj("Księgowość", new Pracownik { Nazwisko = "Mordawski" })
+                      .Dodaj("Księgowość", new Pracownik { Nazwisko = "Burak" })
+                      .Dodaj("Księgowość", new Pracownik { Nazwisko = "Burak" });
 
             foreach (var dzial in pracownicy)
             {

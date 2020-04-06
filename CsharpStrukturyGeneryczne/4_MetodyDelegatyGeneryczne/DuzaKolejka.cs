@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
-namespace _3_KlasyIInterfejsyGeneryczne
+namespace _4_MetodyDelegatyGeneryczne
 {
     public class DuzaKolejka<T> : IKolejka<T>
     {
@@ -31,6 +32,19 @@ namespace _3_KlasyIInterfejsyGeneryczne
         {
             kolejka.Enqueue(wartosc);
         }
+
+        ////Metoda, która pozwala na skonwertowanie dowolnego podanego typu w implementacji, na dowolny typ, danej klasy.              PRZENIESIONE DO METODY EXTENSION
+        //public IEnumerable<Twyjscie> ElementJako<Twyjscie>()
+        //{
+        //    var konwerter = TypeDescriptor.GetConverter(typeof(T));
+
+        //    foreach (var item in kolejka)
+        //    {
+        //        var wynik = konwerter.ConvertTo(item, typeof(Twyjscie));
+        //        yield return (Twyjscie)wynik;
+        //    }
+
+        //}
 
         //Dodana metoda, zwracająca typ, któty umożliwia używanie foreacha dla całej kolekcji
         public IEnumerator<T> GetEnumerator()
